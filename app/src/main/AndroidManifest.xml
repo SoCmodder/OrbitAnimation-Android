@@ -54,6 +54,7 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.WallpaperSettings">
         </activity>
+        <activity android:name=".livepape.SetWallpaperActivity"/>
 
     </application>
 
