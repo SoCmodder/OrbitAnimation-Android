@@ -1,7 +1,7 @@
 package world.mitchmiller.orbitanimation
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,6 +11,5 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun doStuff() {
-
     }
 }

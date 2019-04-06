@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="world.mitchmiller.orbitanimation">
+
+    <uses-feature
+            android:name="android.software.live_wallpaper"
+            android:required="true" >
+
+    </uses-feature>
 
     <application
             android:allowBackup="true"
@@ -8,15 +15,46 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-        <activity android:name=".example.CircleConstraintsActivity">
+            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
+
+        <service
+                android:name=".livepape.service.DerpOrbitWallpaperService"
+                android:enabled="true"
+                android:label="@string/app_name"
+                android:permission="android.permission.BIND_WALLPAPER">
+
             <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" >
+                </action>
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.service.wallpaper"
+                    android:resource="@xml/derp_paper" >
+            </meta-data>
+
+        </service>
+
+        <activity android:name=".example.CircleConstraintsActivity">
+
+            <intent-filter>
+
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
+
             </intent-filter>
+
         </activity>
+
         <activity android:name=".MainActivity"/>
+
+        <activity android:name=".livepape.PrefActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.WallpaperSettings">
+        </activity>
+
     </application>
 
 </manifest>
