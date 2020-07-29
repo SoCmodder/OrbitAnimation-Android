@@ -4,8 +4,8 @@ import android.app.WallpaperManager
 import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import world.mitchmiller.orbitanimation.R
 import world.mitchmiller.orbitanimation.livepape.service.DerpOrbitWallpaperService
 
